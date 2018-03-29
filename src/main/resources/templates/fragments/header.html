@@ -1,0 +1,34 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <header th:fragment="header" class="header">
+        <th:block th:if="${#authorization.expression('hasAnyRole(''ROLE_ADMIN'', ''ROLE_USER'')')}">
+            <div class="current-user">
+            <span id="user-name"> <th:block th:text="${#authentication.name}">user</th:block>
+            <i class="fa fa-caret-down"></i></span>
+                <div class="user-menu">
+                    <ul>
+                        <li>Profile</li>
+                        <li>Logout</li>
+                    </ul>
+                </div>
+            </div>
+        </th:block>
+        <th:block th:unless="${#authorization.expression('hasAnyRole(''ROLE_ADMIN'', ''ROLE_USER'')')}">
+            <div class="sign-in">
+                <a th:href="@{/login}">
+                    <span>Sign in<i class="fa fa-sign-in"></i>
+                    </span>
+                </a>
+            </div>
+        </th:block>
+
+        <div class="bottom-line-group">
+            <div class="menu-button">
+                <i class="fa fa-bars"></i>
+            </div>
+            <div class="heading-group">
+                <h1>Hotel Finder</h1>
+                <h3>version: 0.2</h3>
+            </div>
+        </div>
+    </header>
+</html>
