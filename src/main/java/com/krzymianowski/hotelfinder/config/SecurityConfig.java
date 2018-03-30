@@ -21,11 +21,22 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/users/**").hasRole("ADMIN")
-                .antMatchers("/hotels/**").hasAnyRole("USER", "ADMIN")
-                .antMatchers("/**").permitAll()
-                .anyRequest().authenticated().and().formLogin();
+                    .antMatchers("/users/**").hasRole("ADMIN")
+                    .antMatchers("/hotels/**").hasAnyRole("USER", "ADMIN")
+                    .antMatchers("/register/**").anonymous()
+                    .antMatchers("/**").permitAll()
+                    .anyRequest().authenticated()
+                .and()
+                    .formLogin()
+                    .loginPage("/?login").permitAll()
+                    .loginProcessingUrl("/login").failureUrl("/?error")
+                .and()
+                    .logout()
+                    .logoutSuccessUrl("/");
+
     }
+
+
 
     @Bean
     public BCryptPasswordEncoder passwordEncoder() {

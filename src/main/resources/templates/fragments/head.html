@@ -8,5 +8,8 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700&amp;subset=latin-ext">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" th:href="@{css/master.css}">
+        <th:block th:unless="${#authorization.expression('hasAnyRole(''ROLE_ADMIN'', ''ROLE_USER'')')}">
+            <link rel="stylesheet" th:href="@{css/login-form.css}">
+        </th:block>
     </head>
 </html>

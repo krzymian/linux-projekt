@@ -17,4 +17,9 @@ public class HomePageController {
     public String redirectToHomePage(){
         return "redirect:/";
     }
+
+    @GetMapping("/logout")
+    public String logoutRedirect(){
+        return "redirect:/";
+    }
 }

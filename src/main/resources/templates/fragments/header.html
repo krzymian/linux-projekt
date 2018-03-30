@@ -6,15 +6,19 @@
             <i class="fa fa-caret-down"></i></span>
                 <div class="user-menu">
                     <ul>
-                        <li>Profile</li>
-                        <li>Logout</li>
+                        <li><a href="#">Profile</a></li>
+                        <li>
+                            <form th:action="@{/logout}" method="post">
+                                <input class="btn btn-primary navbar-btn" type="submit" value="Logout" />
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </div>
         </th:block>
         <th:block th:unless="${#authorization.expression('hasAnyRole(''ROLE_ADMIN'', ''ROLE_USER'')')}">
             <div class="sign-in">
-                <a th:href="@{/login}">
+                <a>
                     <span>Sign in<i class="fa fa-sign-in"></i>
                     </span>
                 </a>

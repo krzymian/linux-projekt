@@ -1,9 +1,18 @@
 .main-content {
     position: relative;
-    background: url(../img/blue-exotic-hotel.jpg) no-repeat fixed center;
     background-size: cover;
     height: calc(100vh - 100px);
     border-bottom: 3px solid var(--color1);
+}
+
+.main-content .background{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(../img/blue-exotic-hotel_low.jpg) no-repeat fixed center;
+    width: 100%;
+    height: 100%;
 }
 
 .main-content .cover {

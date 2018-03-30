@@ -145,14 +145,33 @@ body {
     list-style: none;
     box-shadow: -1px 1px 0px;
 }
-
-.header .current-user .user-menu li {
-    position: relative;
-    padding: 5px 0;
-    left: 50%;
-    transform: translateX(-50%);
+.header .current-user .user-menu li input{
+    display: block;
+    color: var(--color4);
+    width: 100%;
+    height: 40px;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
 
+.header .current-user .user-menu li a{
+    display: block;
+    color: var(--color4);
+    width: 100%;
+    height: 40px;
+    text-decoration: none;
+    padding: 5px 0;
+}
+
+.header .current-user .user-menu li:hover{
+    background-color: var(--color2);
+}
+
+.header .current-user .user-menu li:active{
+    background-color: var(--color3);
+}
 
 .header .bottom-line-group {
     position: absolute;

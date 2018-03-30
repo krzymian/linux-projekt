@@ -1,0 +1,50 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <div th:fragment="login" class="login">
+        <div class="cover"></div>
+        <form th:action="@{/login}" th:method="POST">
+            <fieldset class="login-dialog">
+                <div class="head">
+                    <div class="title">
+                        <legend>Sign in</legend>
+                    </div>
+                    <div class="exit">
+                        <i class="fa fa-times"></i>
+                    </div>
+                </div>
+                <div class="alerts">
+                    <div th:unless="${param.error}" class="alert info">
+                        <span>Login with email and password:</span>
+                    </div>
+                    <div th:if="${param.error}" class="alert error">
+                        <span>Incorrect e-mail address or password.</span>
+                    </div>
+                    <!--<div th:if="${param.logout}" class="alert logout">-->
+                        <!--<span>You have been logged out.</span>-->
+                    <!--</div>-->
+                </div>
+                <div class="body">
+                    <div class="inputs">
+                        <div class="input">
+                            <input id="username" name="username" type="text" placeholder="e-mail">
+                            <div class="icon">
+                                <i class="fa fa-user"></i>
+                            </div>
+                        </div>
+                        <div class="input">
+                            <input id="password" name="password" type="password" placeholder="password">
+                            <div class="icon">
+                                <i class="fa fa-lock"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="footer">
+                    <button class="button" type="submit">
+                        Sing in!
+                    </button>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</html>
