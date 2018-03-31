@@ -60,7 +60,7 @@ $(document).ready(function () {
     $(window).resize(function () {
         if ($(document).width() >= 1024) {
             $menu.show();
-        }else{
+        } else {
             $menu.hide();
         }
     })

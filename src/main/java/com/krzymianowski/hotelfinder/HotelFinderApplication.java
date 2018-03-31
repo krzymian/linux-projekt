@@ -31,7 +31,6 @@ public class HotelFinderApplication {
     public void initUsers() {
         User user = new User(
                 "Tomasz",
-                "Krzymianowski",
                 "admin@admin.com",
                 passwordEncoder.encode("passw0rd"),
                 null,

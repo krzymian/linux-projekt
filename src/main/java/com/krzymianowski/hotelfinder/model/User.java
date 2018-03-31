@@ -11,8 +11,7 @@ public class User {
     @Id
     @GeneratedValue
     private long id;
-    private String firstName;
-    private String lastName;
+    private String name;
     @Email
     private String email;
     private String password;
@@ -29,9 +28,8 @@ public class User {
     public User() {
     }
 
-    public User(String firstName, String lastName, @Email String email, String password, String tel, Collection<Role> roles) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public User(String name, @Email String email, String password, String tel, Collection<Role> roles) {
+        this.name = name;
         this.email = email;
         this.password = password;
         this.tel = tel;
@@ -46,20 +44,12 @@ public class User {
         this.id = id;
     }
 
-    public String getFirstName() {
-        return firstName;
+    public String getName() {
+        return name;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setName(String firstName) {
+        this.name = firstName;
     }
 
     public String getEmail() {
@@ -98,8 +88,7 @@ public class User {
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
+                ", firstName='" + name + '\'' +
                 ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", tel='" + tel + '\'' +
