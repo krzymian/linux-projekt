@@ -24,13 +24,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/users/**").hasRole("ADMIN")
-                .antMatchers("/hotels/**").hasAnyRole("USER", "ADMIN")
-//                    .antMatchers("/register/**").anonymous()
+                .antMatchers("/search/**").hasAnyRole("USER", "ADMIN")
                 .antMatchers("/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .formLogin()
+                .usernameParameter("e-mail")
+                .passwordParameter("password")
                 .loginPage("/?login").permitAll()
                 .loginProcessingUrl("/login").failureUrl("/?error").permitAll()
                 .failureHandler(customAuthFailureHandler()).permitAll()
@@ -50,7 +50,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public AuthenticationSuccessHandler successHandler() {
         SimpleUrlAuthenticationSuccessHandler handler = new SimpleUrlAuthenticationSuccessHandler();
-        handler.setUseReferer(true);
+        handler.setUseReferer(false);
         return handler;
     }
 

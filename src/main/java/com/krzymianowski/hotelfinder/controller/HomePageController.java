@@ -10,13 +10,14 @@ public class HomePageController {
 
     @GetMapping
     public String showHomePage() {
-        return "index";
+        return "home-page";
     }
 
-    @GetMapping("/home")
+    @GetMapping(value = {"/home", "/index"})
     public String redirectToHomePage(){
         return "redirect:/";
     }
+
 
     @GetMapping("/logout")
     public String logoutRedirect(){

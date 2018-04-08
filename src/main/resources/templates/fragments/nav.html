@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+    <nav th:fragment="nav">
+        <div class="nav-item" th:classappend="${active == 'home'} ? 'active'">
+            <a th:href="@{/}">
+                <i class="fa fa-home"></i>
+                <span>Home page</span>
+            </a>
+        </div>
+        <div class="nav-item" th:classappend="${active == 'search'} ? 'active'">
+            <a th:href="@{/search}">
+                <i class="fa fa-search"></i>
+                <span>Search for hotels</span>
+            </a>
+        </div>
+        <div class="nav-item" th:classappend="${active == 'register'} ? 'active'">
+            <a th:href="@{/register}">
+                <i class="fa fa-user-plus"></i>
+                <span>Register</span>
+            </a>
+        </div>
+    </nav>
+</html>

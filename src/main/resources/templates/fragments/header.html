@@ -1,15 +1,17 @@
 <html xmlns:th="http://www.thymeleaf.org">
     <header th:fragment="header" class="header">
+
         <th:block th:if="${#authorization.expression('hasAnyRole(''ROLE_ADMIN'', ''ROLE_USER'')')}">
-            <div class="current-user">
-            <span id="user-name"> <th:block th:text="${#authentication.name}">user</th:block>
-            <i class="fa fa-caret-down"></i></span>
+            <div id="current-user">
+                <span class="user-name "> <th:block th:text="${#authentication.name}">Unknown user</th:block><i
+                        class="fa fa-caret-down"></i>
+                </span>
                 <div class="user-menu">
                     <ul>
-                        <li><a href="#">Profile</a></li>
+                        <li>Profile</li>
                         <li>
                             <form th:action="@{/logout}" method="post">
-                                <input class="btn btn-primary navbar-btn" type="submit" value="Logout" />
+                                <input type="submit" value="Logout"/>
                             </form>
                         </li>
                     </ul>
@@ -17,21 +19,22 @@
             </div>
         </th:block>
         <th:block th:unless="${#authorization.expression('hasAnyRole(''ROLE_ADMIN'', ''ROLE_USER'')')}">
-            <div class="sign-in">
+            <div id="sign-in-button">
                 <a>
-                    <span>Sign in<i class="fa fa-sign-in"></i>
-                    </span>
+                <span>Sign in<i class="fa fa-sign-in"></i>
+                </span>
                 </a>
             </div>
         </th:block>
 
-        <div class="bottom-line-group">
+
+        <div class="group">
+            <div class="text-group">
+                <div class="title">Hotel Finder</div>
+                <div class="version">version: 0.34</div>
+            </div>
             <div class="menu-button">
                 <i class="fa fa-bars"></i>
-            </div>
-            <div class="heading-group">
-                <h1>Hotel Finder</h1>
-                <h3>version: 0.2</h3>
             </div>
         </div>
     </header>

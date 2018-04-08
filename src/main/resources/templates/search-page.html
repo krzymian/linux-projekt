@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <th:block th:include="fragments/head :: head"></th:block>
+        <link rel="stylesheet" th:href="@{css/search-page.css}">
+    </head>
+
+    <body>
+        <header th:include="fragments/header :: header"></header>
+        <nav th:include="fragments/nav :: nav(active='search')"></nav>
+
+
+        <main>
+            <div class="cover"></div>
+            <div class="header">
+                <div class="search-menu">
+                    <ul>
+                        <li class="search-stats">
+                            <div class="header">
+                                <span>Search result</span>
+                            </div>
+                            <div class="footer">
+                            <span>
+                                <b>286.333</b> Hotels
+                            </span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="menu-holder">
+                                <div class="menu-button">
+                                    <div class="text">
+                                    <span>Country:
+                                        <span>Show all</span>
+                                    </span>
+
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                </div>
+                                <div class="menu">
+                                    <ul>
+                                        <li>
+                                            <span>All</span>
+                                        </li>
+                                        <li>
+                                            <span>Poland</span>
+                                        </li>
+                                        <li>
+                                            <span>Germany</span>
+                                        </li>
+                                        <li>
+                                            <span>Ukraine</span>
+                                        </li>
+                                        <li>
+                                            <span>Hungary</span>
+                                        </li>
+                                        <li>
+                                            <span>Tonga</span>
+                                        </li>
+                                        <li>
+                                            <span>Brazil</span>
+                                        </li>
+                                        <li>
+                                            <span>Italy</span>
+                                        </li>
+                                        <li>
+                                            <span>Korea</span>
+                                        </li>
+                                        <li>
+                                            <span>Japan</span>
+                                        </li>
+                                        <li>
+                                            <span>Chine</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="menu-holder">
+                                <div class="menu-button">
+                                    <div class="text">
+                                    <span>City:
+                                        <span>Select country first!</span>
+                                    </span>
+
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                </div>
+                                <div class="menu">
+                                    <ul>
+                                        <li>
+                                            <span>Select country first!</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="menu-holder">
+                                <div class="menu-button">
+                                    <div class="text">
+                                    <span>Sort by:
+                                        <span>Low price</span>
+                                    </span>
+
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                </div>
+                                <div class="menu">
+                                    <ul>
+                                        <li>
+                                            <span>Low price</span>
+                                        </li>
+                                        <li>
+                                            <span>High price</span>
+                                        </li>
+                                        <li>
+                                            <span>Low stars</span>
+                                        </li>
+                                        <li>
+                                            <span>High stars</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="menu-holder">
+                                <div class="menu-button">
+                                    <div class="text">
+                                    <span>Show on site:
+                                        <span>Default: 10</span>
+                                    </span>
+
+                                    </div>
+                                    <div class="icon">
+                                        <i class="fa fa-caret-down"></i>
+                                    </div>
+                                </div>
+                                <div class="menu">
+                                    <ul>
+                                        <li>
+                                            <span>10</span>
+                                        </li>
+                                        <li>
+                                            <span>15</span>
+                                        </li>
+                                        <li>
+                                            <span>20</span>
+                                        </li>
+                                        <li>
+                                            <span>30</span>
+                                        </li>
+                                        <li>
+                                            <span>50</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </li>
+
+
+                    </ul>
+                </div>
+            </div>
+            <div class="main">
+                <div class="hotels-list">
+                    <ul>
+                        <li>
+                            <div class="header">
+                                <div class="title">
+                                <span>
+                                    <a href="#">Little Italy Hotel NukuAlofa</a>
+                                </span>
+                                </div>
+                                <div class="content">
+                                    <div class="price">
+                                        <span>172.00$</span>
+                                    </div>
+                                    <div class="stars">
+                                    <span>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main">
+                                <ul>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Hotel name:</div>
+                                                <span>International Dateline Hotel</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Website:</div>
+                                                <span>
+                                                <a href="http://www.datelinehotel.com/">www.datelinehotel.com</a>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Country name:</div>
+                                                <span>Tonga</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">City name:</div>
+                                                <span>NukuAlofa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Address:</div>
+                                                <span>P.O.Box 39 Vuna Road</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Location:</div>
+                                                <span>NukuAlofa Tonga</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Latitude:</div>
+                                                <span>-21.1263</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Longitude:</div>
+                                                <span>-175.213</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header">
+                                <div class="title">
+                                <span>
+                                    <a href="#">Little Italy Hotel NukuAlofa</a>
+                                </span>
+                                </div>
+                                <div class="content">
+                                    <div class="price">
+                                        <span>172.00$</span>
+                                    </div>
+                                    <div class="stars">
+                                    <span>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main">
+                                <ul>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Hotel name:</div>
+                                                <span>International Dateline Hotel</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Website:</div>
+                                                <span>
+                                                <a href="http://www.datelinehotel.com/">www.datelinehotel.com</a>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Country name:</div>
+                                                <span>Tonga</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">City name:</div>
+                                                <span>NukuAlofa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Address:</div>
+                                                <span>P.O.Box 39 Vuna Road</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Location:</div>
+                                                <span>NukuAlofa Tonga</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Latitude:</div>
+                                                <span>-21.1263</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Longitude:</div>
+                                                <span>-175.213</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header">
+                                <div class="title">
+                                <span>
+                                    <a href="#">Little Italy Hotel NukuAlofa</a>
+                                </span>
+                                </div>
+                                <div class="content">
+                                    <div class="price">
+                                        <span>172.00$</span>
+                                    </div>
+                                    <div class="stars">
+                                    <span>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main">
+                                <ul>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Hotel name:</div>
+                                                <span>International Dateline Hotel</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Website:</div>
+                                                <span>
+                                                <a href="http://www.datelinehotel.com/">www.datelinehotel.com</a>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Country name:</div>
+                                                <span>Tonga</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">City name:</div>
+                                                <span>NukuAlofa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Address:</div>
+                                                <span>P.O.Box 39 Vuna Road</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Location:</div>
+                                                <span>NukuAlofa Tonga</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Latitude:</div>
+                                                <span>-21.1263</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Longitude:</div>
+                                                <span>-175.213</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header">
+                                <div class="title">
+                                <span>
+                                    <a href="#">Little Italy Hotel NukuAlofa</a>
+                                </span>
+                                </div>
+                                <div class="content">
+                                    <div class="price">
+                                        <span>172.00$</span>
+                                    </div>
+                                    <div class="stars">
+                                    <span>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main">
+                                <ul>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Hotel name:</div>
+                                                <span>International Dateline Hotel</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Website:</div>
+                                                <span>
+                                                <a href="http://www.datelinehotel.com/">www.datelinehotel.com</a>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Country name:</div>
+                                                <span>Tonga</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">City name:</div>
+                                                <span>NukuAlofa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Address:</div>
+                                                <span>P.O.Box 39 Vuna Road</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Location:</div>
+                                                <span>NukuAlofa Tonga</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Latitude:</div>
+                                                <span>-21.1263</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Longitude:</div>
+                                                <span>-175.213</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header">
+                                <div class="title">
+                                <span>
+                                    <a href="#">Little Italy Hotel NukuAlofa</a>
+                                </span>
+                                </div>
+                                <div class="content">
+                                    <div class="price">
+                                        <span>172.00$</span>
+                                    </div>
+                                    <div class="stars">
+                                    <span>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main">
+                                <ul>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Hotel name:</div>
+                                                <span>International Dateline Hotel</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Website:</div>
+                                                <span>
+                                                <a href="http://www.datelinehotel.com/">www.datelinehotel.com</a>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Country name:</div>
+                                                <span>Tonga</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">City name:</div>
+                                                <span>NukuAlofa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Address:</div>
+                                                <span>P.O.Box 39 Vuna Road</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Location:</div>
+                                                <span>NukuAlofa Tonga</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Latitude:</div>
+                                                <span>-21.1263</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Longitude:</div>
+                                                <span>-175.213</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header">
+                                <div class="title">
+                                <span>
+                                    <a href="#">Little Italy Hotel NukuAlofa</a>
+                                </span>
+                                </div>
+                                <div class="content">
+                                    <div class="price">
+                                        <span>172.00$</span>
+                                    </div>
+                                    <div class="stars">
+                                    <span>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main">
+                                <ul>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Hotel name:</div>
+                                                <span>International Dateline Hotel</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Website:</div>
+                                                <span>
+                                                <a href="http://www.datelinehotel.com/">www.datelinehotel.com</a>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Country name:</div>
+                                                <span>Tonga</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">City name:</div>
+                                                <span>NukuAlofa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Address:</div>
+                                                <span>P.O.Box 39 Vuna Road</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Location:</div>
+                                                <span>NukuAlofa Tonga</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Latitude:</div>
+                                                <span>-21.1263</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Longitude:</div>
+                                                <span>-175.213</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header">
+                                <div class="title">
+                                <span>
+                                    <a href="#">Little Italy Hotel NukuAlofa</a>
+                                </span>
+                                </div>
+                                <div class="content">
+                                    <div class="price">
+                                        <span>172.00$</span>
+                                    </div>
+                                    <div class="stars">
+                                    <span>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main">
+                                <ul>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Hotel name:</div>
+                                                <span>International Dateline Hotel</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Website:</div>
+                                                <span>
+                                                <a href="http://www.datelinehotel.com/">www.datelinehotel.com</a>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Country name:</div>
+                                                <span>Tonga</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">City name:</div>
+                                                <span>NukuAlofa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Address:</div>
+                                                <span>P.O.Box 39 Vuna Road</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Location:</div>
+                                                <span>NukuAlofa Tonga</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Latitude:</div>
+                                                <span>-21.1263</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Longitude:</div>
+                                                <span>-175.213</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header">
+                                <div class="title">
+                                <span>
+                                    <a href="#">Little Italy Hotel NukuAlofa</a>
+                                </span>
+                                </div>
+                                <div class="content">
+                                    <div class="price">
+                                        <span>172.00$</span>
+                                    </div>
+                                    <div class="stars">
+                                    <span>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main">
+                                <ul>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Hotel name:</div>
+                                                <span>International Dateline Hotel</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Website:</div>
+                                                <span>
+                                                <a href="http://www.datelinehotel.com/">www.datelinehotel.com</a>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Country name:</div>
+                                                <span>Tonga</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">City name:</div>
+                                                <span>NukuAlofa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Address:</div>
+                                                <span>P.O.Box 39 Vuna Road</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Location:</div>
+                                                <span>NukuAlofa Tonga</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Latitude:</div>
+                                                <span>-21.1263</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Longitude:</div>
+                                                <span>-175.213</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header">
+                                <div class="title">
+                                <span>
+                                    <a href="#">Little Italy Hotel NukuAlofa</a>
+                                </span>
+                                </div>
+                                <div class="content">
+                                    <div class="price">
+                                        <span>172.00$</span>
+                                    </div>
+                                    <div class="stars">
+                                    <span>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main">
+                                <ul>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Hotel name:</div>
+                                                <span>International Dateline Hotel</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Website:</div>
+                                                <span>
+                                                <a href="http://www.datelinehotel.com/">www.datelinehotel.com</a>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Country name:</div>
+                                                <span>Tonga</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">City name:</div>
+                                                <span>NukuAlofa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Address:</div>
+                                                <span>P.O.Box 39 Vuna Road</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Location:</div>
+                                                <span>NukuAlofa Tonga</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Latitude:</div>
+                                                <span>-21.1263</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Longitude:</div>
+                                                <span>-175.213</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="header">
+                                <div class="title">
+                                <span>
+                                    <a href="#">Little Italy Hotel NukuAlofa</a>
+                                </span>
+                                </div>
+                                <div class="content">
+                                    <div class="price">
+                                        <span>172.00$</span>
+                                    </div>
+                                    <div class="stars">
+                                    <span>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="main">
+                                <ul>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Hotel name:</div>
+                                                <span>International Dateline Hotel</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Website:</div>
+                                                <span>
+                                                <a href="http://www.datelinehotel.com/">www.datelinehotel.com</a>
+                                            </span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Country name:</div>
+                                                <span>Tonga</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">City name:</div>
+                                                <span>NukuAlofa</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Address:</div>
+                                                <span>P.O.Box 39 Vuna Road</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Location:</div>
+                                                <span>NukuAlofa Tonga</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="top">
+                                            <div class="attr">
+                                                <div class="title">Latitude:</div>
+                                                <span>-21.1263</span>
+                                            </div>
+                                        </div>
+                                        <div class="bottom">
+                                            <div class="attr">
+                                                <div class="title">Longitude:</div>
+                                                <span>-175.213</span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="hotels-paginator">
+                    <div class="previous">
+                        <span>Previous</span>
+                    </div>
+                    <div class="page">
+                    <span>
+                        1
+                    </span>
+                    </div>
+                    <div class="page">
+                        <span>2</span>
+                    </div>
+                    <div class="page">
+                        <span>3</span>
+                    </div>
+                    <div class="page">
+                        <span>4</span>
+                    </div>
+                    <div class="page">
+                        <span>5</span>
+                    </div>
+                    <div class="page">
+                        <span>6</span>
+                    </div>
+                    <div class="next">
+                        <span>Next</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer th:include="fragments/footer :: footer"></footer>
+
+        <div th:replace="fragments/login :: login"></div>
+        <script th:src="@{js/jquery-3.3.1.min.js}"></script>
+        <script type="text/javascript" th:if="${param.login} or ${param.error}">
+            if ($(".login").length) {
+                $(".login").show();
+            }
+        </script>
+        <script th:src="@{js/master.js}"></script>
+        <script th:src="@{js/search-page.js}"></script>
+    </body>
+
+</html>

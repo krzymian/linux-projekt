@@ -1,342 +1,186 @@
-.main-content {
+main {
+    --main_header_height: 136px;
+    --main_footer_height: 120px;
+}
+
+/*
+    main || .header
+*/
+
+main>.header {
+    font-size: 1.4rem;
+    color: var(--color_gray_2);
+    padding: 0 10%;
+}
+
+main>.header>h1 {
     position: relative;
-    height: calc(100vh - 100px);
-    border-bottom: 3px solid var(--color1);
-}
-
-.main-content .background{
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background: url(../img/blue-exotic-hotel_low.jpg) no-repeat fixed center;
-    background-size: cover;
-    width: 100%;
-    height: 100%;
-}
-
-.main-content .cover {
-    position: absolute;
-    background-color: var(--color4);
-    opacity: 0.7;
-    width: 100%;
-    height: 100%;
-}
-
-.main-content .home-page-content {
-    position: relative;
-    height: 100%;
-    color: white;
-    font-size: 1.5rem;
     text-align: center;
-}
-
-.main-content .home-page-content .title {
-    position: absolute;
-    top: 10%;
-    height: 20%;
-    width: 100%;
-    font-size: 3rem;
-    overflow: hidden;
-}
-
-.main-content .home-page-content .title span {
-    display: block;
-    position: relative;
     top: 50%;
     transform: translateY(-50%);
-    padding: 10px;
+    font-weight: normal;
 }
 
+/*
+    main || .main
+*/
 
-.main-content .home-page-content .features {
-    position: absolute;
-    top: 30%;
-    font-size: 2.2rem;
-    height: 50%;
-    width: 100%;
+main>.main>.items-holder {
+    padding: 15px 0;
 }
 
-.main-content .home-page-content .features .item {
-    width: 30%;
-    display: inline-block;
-    height: 100%;
-    /*    overflow: hidden;*/
-}
-
-.main-content .home-page-content .features .item a {
-    text-decoration: none;
-    color: white;
-}
-
-
-
-.main-content .home-page-content .features .item .icon {
+main>.main>.items-holder>ul {
     position: relative;
-    height: 60%;
-}
-
-.main-content .home-page-content .features .item .icon i {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 13rem;
-}
-
-.main-content .home-page-content .features .item .description {
-    position: relative;
-    height: 40%;
     text-align: center;
-    margin: 0 10px;
-}
-
-.main-content .home-page-content .features .item .description span {
-    position: absolute;
-    top: 5%;
-    left: 0;
     width: 100%;
-    /*    transform: translateY(-50%);*/
+    font-size: 0;
 }
 
-.main-content .home-page-content .features .item .description span a {
-    text-decoration: none;
-    text-decoration: underline;
-    color: white;
-}
-
-.main-content .home-page-content .features .item .description span a:hover {
-    color: var(--color2);
-}
-
-.main-content .home-page-content .start-button {
-    position: absolute;
-    bottom: 4.5%;
-    height: 13%;
-    width: 100%;
-    overflow: hidden;
+main>.main>.items-holder>ul>li {
     font-size: 2rem;
-}
-
-.main-content .home-page-content .start-button a {
     position: relative;
-    text-decoration: none;
-    color: white;
-    display: block;
-    height: 70%;
-    width: 50%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--color1);
+    display: inline-block;
+    width: 400px;
+    height: 500px;
+    margin: 10px;
+    background-color: var(--color_white);
+    box-shadow: 4px 4px 10px var(--color_gray_5);
     overflow: hidden;
 }
 
-.main-content .home-page-content .start-button a:hover {
-    background-color: var(--color2);
-    color: var(--color4);
+main>.main>.items-holder>ul>li>a {
+    color: inherit;
+    text-decoration: none;
 }
 
-.main-content .home-page-content .start-button a:active {
-    background-color: var(--color1);
+main>.main .items-holder li .header {
+    position: relative;
+    display: block;
+    text-decoration: none;
+    height: 70%;
+    font-size: 20rem;
+    text-shadow: 0 0 15px var(--color_gray_1);
+    /* text-shadow: 4px 0 15px var(--color_primary_1), -4px 0 15px var(--color_primary_1); */
+    color: var(--color_gray_2);
+    background-color: var(--color_gray_1);
+    border: 1px solid var(--color_gray_4);
+}
+
+main>.main .items-holder li:hover .header {
+    transition: font-size 0.5s;
+    font-size: 22rem;
+}
+
+main>.main .items-holder li:hover .footer {
     color: white;
+    background-color: var(--color_primary_1);
 }
 
-.main-content .home-page-content .start-button a span {
+main>.main .items-holder li:nth-child(2n):hover .footer {
+    background-color: var(--color_secondary_1);
+}
+
+main>.main .items-holder li:active .footer {
+    background-color: var(--color_gray_1);
+    color: var(--color_gray_2);
+}
+
+main>.main .items-holder li:nth-child(2n):active .footer {
+    background-color: var(--color_gray_1);
+    color: var(--color_gray_2);
+}
+
+main>.main .items-holder li .header>i {
     position: absolute;
     display: block;
-    width: 100%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-.main-content .home-page-content .bottom-text {
-    position: absolute;
-    bottom: -3%;
-    height: 5%;
-    width: 100%;
-}
-
-.main-content .home-page-content .bottom-text span {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+main>.main .items-holder li .footer {
+    height: 30%;
+    border: 1px solid var(--color_gray_4);
+    border-top: none;
     padding: 0 10px;
 }
 
+main>.main .items-holder li .footer>span {
+    position: relative;
+    display: block;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+}
 
+main>.main .items-holder li .footer a {
+    text-decoration: underline;
+    color: inherit;
+}
 
+/*
+    main || .footer
+*/
 
-@media (orientation: landscape) {
+main>.footer {
+    text-align: center;
+    font-size: 2.3rem;
+    color: var(--color_white);
+    font-weight: bold;
+}
 
-    .main-content {
-        height: calc(100vh - 70px);
-    }
+main>.footer>.search-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: inherit;
+    text-decoration: none;
+    background-color: var(--color_secondary_2);
+    height: 50px;
+    width: 500px;
+    line-height: 50px;
+    cursor: pointer;
+    user-select: none;
+}
+
+main>.footer>.search-button:hover {
+    background-color: var(--color_secondary_1);
+}
+
+main>.footer>.search-button:active {
+    background-color: var(--color_secondary_2);
 }
 
 
-@media (max-width: 359px) {
-    .main-content .home-page-content {
-        font-size: 1.3rem;
+@media (max-width: 700px) {
+    main>.main>.items-holder>ul>li {
+        font-size: 2rem;
+        width: 300px;
+        height: 400px;
+        margin: 10px;
     }
 
-    .main-content .home-page-content .title {
-        font-size: 2.2rem;
+    main>.header {
+        padding: 0 20px;
+        font-size: 1.1rem;
+    }
+    main>.main .items-holder li .header {
+        font-size: 16rem;
+    }
+    main>.main .items-holder li:hover .header {
+        transition: font-size 0.5s;
+        font-size: 18rem;
     }
 
-    .main-content .home-page-content .features {
-        font-size: 1.5rem;
-    }
-
-    .main-content .home-page-content .features .item .icon {
-        height: 100%;
-    }
-    .main-content .home-page-content .features .item .icon i {
-        font-size: 6rem;
-    }
-
-    .main-content .home-page-content .features .item .description {
-        display: none;
-    }
-
-    .main-content .home-page-content .start-button {
-        font-size: 1.5rem;
-        height: 15%;
-        bottom: 10%;
-    }
-
-    .main-content .home-page-content .start-button a {
-        width: 70%;
-    }
-}
-
-@media (min-width: 360px) {
-    .main-content .home-page-content {
-        font-size: 1.3rem;
-    }
-
-    .main-content .home-page-content .title {
-        font-size: 2.2rem;
-    }
-
-    .main-content .home-page-content .features {
-        font-size: 1.3rem;
-    }
-
-    .main-content .home-page-content .features .item .icon {
-        height: 40%
-    }
-
-    .main-content .home-page-content .features .item .icon i {
-        font-size: 6rem;
-    }
-
-    .main-content .home-page-content .features .item .description {
-        margin: 0 5px;
-        height: 60%;
-    }
-
-    .main-content .home-page-content .start-button {
-        font-size: 1.5rem;
-    }
-
-    .main-content .home-page-content .start-button a {
-        width: 70%;
-    }
-}
-
-@media (min-width: 360px) and (orientation: landscape) {
-    .main-content .home-page-content .features .item .icon i {
-        font-size: 4rem;
-    }
-}
-
-@media (min-width: 720px) {
-    .main-content .home-page-content {
-        font-size: 1.5rem;
-    }
-
-    .main-content .home-page-content .title {
-        font-size: 2.5rem;
-    }
-
-    .main-content .home-page-content .features {
-        font-size: 1.5rem;
-    }
-
-    .main-content .home-page-content .features .item .icon {
-        height: 60%
-    }
-
-    .main-content .home-page-content .features .item .icon i {
-        font-size: 10rem;
-    }
-
-    .main-content .home-page-content .features .item .description {
-        margin: 0 5px;
-        height: 40%;
-    }
-
-    .main-content .home-page-content .start-button {
-        font-size: 1.7rem;
-    }
-
-    .main-content .home-page-content .start-button a {
-        width: 50%;
-    }
-}
-
-@media (min-width: 720px) and (orientation: landscape) {
-    .main-content .home-page-content .features .item .icon i {
-        font-size: 8rem;
-    }
-}
-
-@media (min-width: 1024px) {
-    .main-content {
-        height: calc(100vh - 110px);
-    }
-
-    .main-content .home-page-content .title {
-        font-size: 3.0rem;
-    }
-
-    .main-content .home-page-content .features {
+    main>.footer {
+        text-align: center;
         font-size: 1.8rem;
+        color: var(--color_white);
+        font-weight: bold;
     }
 
-    .main-content .home-page-content .features .item .icon i {
-        font-size: 15rem;
-    }
-}
-
-@media (min-width: 1440px) {
-    .main-content {
-        height: calc(100vh - 110px);
-    }
-    .main-content .home-page-content {
-        font-size: 2.0rem;
-    }
-    .main-content .home-page-content .title {
-        font-size: 4.5rem;
-    }
-
-    .main-content .home-page-content .features {
-        font-size: 2.5rem;
-    }
-
-    .main-content .home-page-content .features .item .icon i {
-        font-size: 20rem;
-    }
-
-    .main-content .home-page-content .start-button {
-        font-size: 2.7rem;
-    }
-
-    .main-content .home-page-content .start-button a {
-        width: 40%;
+    main>.footer>.search-button {
+        width: 300px;
     }
 }

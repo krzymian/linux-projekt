@@ -1,67 +1,76 @@
-var isMenuVisible = false;
-var $menu = $("main .menu");
-if ($(document).width() < 1024) {
-    $menu.hide();
-}
+const mobileIn = 700;
 
 $(document).ready(function () {
     $(document).click(function (event) {
-        let $icon = $("header .current-user #user-name i");
-        if (!$(event.target).closest('header .current-user').length) {
-            if ($('header .current-user .user-menu').is(":visible")) {
-                $('header .current-user .user-menu').slideToggle(100, function () {
+        let $userMenu = $("#current-user>.user-menu");
+        let $icon = $("#current-user>#user-name i");
+
+        if (!$(event.target).closest('#current-user').length) {
+            if ($userMenu.is(":visible")) {
+                $userMenu.slideToggle(100, function () {
                     $icon.toggleClass("fa-caret-down");
                     $icon.toggleClass("fa-caret-up");
-                    $('header .current-user #user-name').toggleClass("active");
+                    $('#current-user>.user-name').toggleClass("active");
                 });
             }
         }
 
-        if (!$(event.target).closest('main .menu').length && !$(event.target).closest('header .menu-button').length) {
-            if (isMenuVisible) {
-                isMenuVisible = !isMenuVisible;
-
-                $('main .menu').slideToggle({
-                    duration: 250,
-                    queue: true
-                });
+        if (!$(event.target).closest('nav').length && !$(event.target).closest('header>.group>.menu-button').length) {
+            if ($('nav').is(":visible") && window.innerWidth <= mobileIn) {
+                $("nav").slideToggle("fast");
             }
         }
     })
 
-    var $userButton = $("header .current-user #user-name");
-    $userButton.click(function (event) {
-        let $menu = $(this).parent().children(".user-menu");
-        let $icon = $(this).children("i");
-        if ($menu.is(":visible")) {
-            $menu.slideToggle(100, function () {
+    let $userButton = $("#current-user");
+    $userButton.children(".user-name").click(function () {
+        let $userMenu = $userButton.children(".user-menu");
+        let $icon = $userButton.find("i");
+        if ($userMenu.is(":visible")) {
+            $userMenu.slideToggle(100, function () {
                 $icon.toggleClass("fa-caret-down");
                 $icon.toggleClass("fa-caret-up");
-                $('header .current-user #user-name').toggleClass("active");
+                $userButton.children(".user-name").toggleClass("active");
             });
         } else {
-            $(this).toggleClass("active");
-            $menu.slideToggle(250);
+            $userButton.children(".user-name").toggleClass("active");
+            $userMenu.slideToggle(250);
             $icon.toggleClass("fa-caret-down");
             $icon.toggleClass("fa-caret-up");
         }
     })
 
-    var $navButton = $("header .menu-button");
-    $navButton.click(function () {
-        isMenuVisible = !isMenuVisible;
+    var $loginForm = $("body>.login");
+    if ($loginForm.length) {
+        // $loginForm.hide();
 
-        $menu.slideToggle({
-            duration: 250,
-            queue: true
+        $("body>.login .login-dialog>.head>.exit").click(function () {
+            $loginForm.fadeOut("fast");
         });
-    })
 
-    $(window).resize(function () {
-        if ($(document).width() >= 1024) {
-            $menu.show();
-        } else {
-            $menu.hide();
-        }
+        $("#sign-in-button").click(function () {
+            $loginForm.fadeIn("fast");
+        })
+
+        $("#footerLoginBtn").click(function () {
+            $loginForm.fadeIn("fast");
+        })
+    }
+
+    var $menuButton = $("header>.group>.menu-button");
+    $menuButton.click(function () {
+        $("nav").slideToggle("fast");
     })
-});
+})
+
+$(window).resize(function (event) {
+    if (window.innerWidth > mobileIn) {
+        if (!$("nav").is(":visible")) {
+            $("nav").show();
+        }
+    } else {
+        if ($("nav").is(":visible")) {
+            $("nav").hide();
+        }
+    }
+})

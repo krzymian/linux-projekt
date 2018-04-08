@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+    <head>
+        <th:block th:include="fragments/head :: head"></th:block>
+        <link rel="stylesheet" th:href="@{css/register-page.css}">
+    </head>
+
+    <body>
+        <header th:include="fragments/header :: header"></header>
+        <nav th:include="fragments/nav :: nav(active='register')"></nav>
+
+        <main>
+            <div class="header">
+                <h1>Register new account</h1>
+            </div>
+            <div class="main">
+                <div class="register-form">
+                    <form th:action="@{/register}" th:method="POST" th:object="${user}">
+                        <fieldset>
+                            <div class="head">
+                                <div class="title">
+                                    <legend>Create new account</legend>
+                                </div>
+                            </div>
+                            <div class="alerts">
+                                <th:block th:if="${#fields.hasAnyErrors()}">
+                                    <th:block th:each="error : ${#fields.errors()}">
+                                        <div class="error">
+                                            <span th:text="${error}"> </span>
+                                        </div>
+                                    </th:block>
+                                </th:block>
+                                <th:block th:unless="${#fields.hasAnyErrors()}">
+                                        <div class="info">
+                                            <span>Please enter a valid informations to complete registration.</span>
+                                        </div>
+                                </th:block>
+                            </div>
+                            <div class="body">
+                                <div class="inputs">
+                                    <div class="input" th:classappend="${#fields.hasErrors('name')} ? error">
+                                        <input th:field="*{name}" type="text" id="name" placeholder="Name" required
+                                               pattern="[a-zA-Z]{3,15}">
+                                        <div class="icon">
+                                            <i class="fa fa-user"></i>
+                                        </div>
+                                    </div>
+                                    <div class="input" th:classappend="${#fields.hasErrors('phone')} ? error">
+                                        <input th:field="*{phone}" type="text" id="phone" placeholder="Phone number">
+                                        <div class="icon">
+                                            <i class="fa fa-phone-square"></i>
+                                        </div>
+                                    </div>
+                                    <div class="input" th:classappend="${#fields.hasErrors('email')} ? error">
+                                        <input th:field="*{email}" type="text" id="email" placeholder="E-mail" required
+                                               pattern="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$">
+                                        <div class="icon">
+                                            <i class="fa fa-envelope"></i>
+                                        </div>
+                                    </div>
+                                    <div class="input" th:classappend="${#fields.hasErrors('password')} ? error">
+                                        <input th:field="*{password}" type="password" id="password"
+                                               placeholder="Password" required
+                                               pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$">
+                                        <div class="icon">
+                                            <i class="fa fa-lock"></i>
+                                        </div>
+                                    </div>
+                                    <div class="input" th:classappend="${#fields.hasErrors('password')} ? error">
+                                        <input type="password" id="confirm_password" placeholder="Confirm password">
+                                        <div class="icon">
+                                            <i class="fa fa-lock"
+                                               style="text-shadow: 16px 0px 0; left: calc(50% - 8px);"></i>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="footer">
+                                <button class="button" type="submit">
+                                    Register!
+                                </button>
+                            </div>
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+            <div class="footer">
+            </div>
+        </main>
+
+        <footer th:include="fragments/footer :: footer"></footer>
+
+        <div th:replace="fragments/login :: login"></div>
+        <script th:src="@{js/jquery-3.3.1.min.js}"></script>
+        <script type="text/javascript" th:if="${param.login} or ${param.error}">
+            if ($(".login").length) {
+                $(".login").show();
+            }
+        </script>
+        <script th:src="@{js/master.js}"></script>
+        <script th:src="@{js/register-page.js}"></script>
+    </body>
+
+</html>
