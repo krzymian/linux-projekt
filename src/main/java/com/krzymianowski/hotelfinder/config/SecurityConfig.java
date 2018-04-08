@@ -2,6 +2,7 @@ package com.krzymianowski.hotelfinder.config;
 
 
 import com.krzymianowski.hotelfinder.config.component.CustomAuthFailureHandler;
+import com.krzymianowski.hotelfinder.config.component.CustomAuthSuccessHandler;
 import com.krzymianowski.hotelfinder.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -31,10 +32,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .formLogin()
                 .usernameParameter("e-mail")
                 .passwordParameter("password")
-                .loginPage("/?login").permitAll()
-                .loginProcessingUrl("/login").failureUrl("/?error").permitAll()
-                .failureHandler(customAuthFailureHandler()).permitAll()
-                .successHandler(successHandler()).permitAll()
+                .loginPage("/?login")
+                .loginProcessingUrl("/login").failureUrl("/?error")
+                .failureHandler(customAuthFailureHandler())
+                .successHandler(customAuthSuccessHandler())
                 .and()
                 .logout()
                 .logoutSuccessUrl("/");
@@ -45,6 +46,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public CustomAuthFailureHandler customAuthFailureHandler() {
         return new CustomAuthFailureHandler();
+    }
+
+    @Bean
+    public CustomAuthSuccessHandler customAuthSuccessHandler(){
+        return new CustomAuthSuccessHandler();
     }
 
     @Bean
