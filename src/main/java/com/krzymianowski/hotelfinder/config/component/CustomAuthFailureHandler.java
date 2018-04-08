@@ -15,7 +15,7 @@ public class CustomAuthFailureHandler extends SimpleUrlAuthenticationFailureHand
     public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response,
                                         AuthenticationException exception) throws IOException {
         String referer = request.getHeader("Referer");
-        if (referer.indexOf("?") > 0) referer = referer.substring(0, referer.indexOf("?"));
+        if (referer != null && referer.indexOf("?") > 0) referer = referer.substring(0, referer.indexOf("?"));
         getRedirectStrategy().sendRedirect(request, response, referer +"?error");
     }
 }
