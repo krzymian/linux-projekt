@@ -3,6 +3,7 @@ package com.krzymianowski.hotelfinder.model;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Transient;
 
 @Entity
 public class Hotel {
@@ -19,6 +20,8 @@ public class Hotel {
     private String address;
     private String location;
     private String url;
+    @Transient
+    private String shortUrl;
     private String latitude;
     private String longitude;
 
@@ -40,11 +43,12 @@ public class Hotel {
         this.longitude = longitude;
     }
 
+
     public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -60,7 +64,7 @@ public class Hotel {
         return stars;
     }
 
-    public void setStars(byte stars) {
+    public void setStars(double stars) {
         this.stars = stars;
     }
 
@@ -118,6 +122,14 @@ public class Hotel {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public String getShortUrl() {
+        return shortUrl;
+    }
+
+    public void setShortUrl(String shortUrl) {
+        this.shortUrl = shortUrl;
     }
 
     public String getLatitude() {
