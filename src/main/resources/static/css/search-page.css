@@ -392,6 +392,11 @@ main > .footer > .hotels-paginator > a {
 
 main > .footer > .hotels-paginator > a[class*="current"] {
     background-color: var(--color_primary_1);
+    cursor: default;
+    color: white;
+}
+main > .footer > .hotels-paginator > a[class*="current"]:active {
+    pointer-events: none;
 }
 
 main > .footer > .hotels-paginator > a:last-child {
@@ -403,11 +408,11 @@ main > .footer > .hotels-paginator > a:first-child {
     width: 25%;
 }
 
-main > .footer > .hotels-paginator > a:not(.disable):hover {
+main > .footer > .hotels-paginator > a:not(.disable):not(.current):hover {
     background-color: var(--color_white);
 }
 
-main > .footer > .hotels-paginator > a:not(.disable):active {
+main > .footer > .hotels-paginator > a:not(.disable):not(.current):active {
     background-color: var(--color_gray_1);
 }
 
