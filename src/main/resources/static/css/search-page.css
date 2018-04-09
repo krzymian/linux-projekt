@@ -359,7 +359,7 @@ main > .main > .hotels-list > ul > li > .main > ul > li > div .attr span {
 
 main > .footer {
     text-transform: uppercase;
-    font-size: 1.2rem;
+    font-size: 1.0rem;
 }
 
 main > .footer > .hotels-paginator {
@@ -385,7 +385,7 @@ main > .footer > .hotels-paginator > a {
     float: left;
     background-color: var(--color_gray_1);
     height: 100%;
-    width: 10%;
+    width: 8%;
     border-right: 1px solid var(--color_gray_5);
     overflow: hidden;
 }
@@ -401,11 +401,14 @@ main > .footer > .hotels-paginator > a[class*="current"]:active {
 
 main > .footer > .hotels-paginator > a:last-child {
     border-right: none;
-    width: 15%;
+    width: 13%;
 }
 
 main > .footer > .hotels-paginator > a:first-child {
-    width: 25%;
+    width: 19%;
+}
+main > .footer > .hotels-paginator > a[class*='first'] {
+    width: 12%;
 }
 
 main > .footer > .hotels-paginator > a:not(.disable):not(.current):hover {
