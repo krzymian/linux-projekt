@@ -15,12 +15,15 @@ public class SearchController {
     private HotelService hotelService;
 
     @GetMapping("/search")
-    public ModelAndView searchPage(@RequestParam(defaultValue = "1") int page) {
+    public ModelAndView searchPage(
+            @RequestParam(defaultValue = "1") int page,
+            @RequestParam(defaultValue = "10") int size) {
         if (page < 1) page = 1;
+        if (size < 5) size = 5;
         ModelAndView modelAndView = new ModelAndView("search-page");
         modelAndView.addObject(
                 "hotels",
-                hotelService.pageHotels(PageRequest.of(page-1, 10)));
+                hotelService.pageHotels(PageRequest.of(page-1, size)));
         return modelAndView;
     }
 }
